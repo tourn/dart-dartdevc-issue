@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'generic_thing.dart';
 
-class ChildThing<T> extends GenericThing<T> {
+class ChildThing extends GenericThing {
 
   @override
   Future foo() async{
