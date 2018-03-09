@@ -1,0 +1,5 @@
+build/
+pubcache
+.pub
+.packages
+.idea
