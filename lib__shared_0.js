@@ -10,12 +10,8 @@ define(['dart_sdk'], function(dart_sdk) {
   let GenericThing = () => (GenericThing = dart.constFn(src__generic_thing.GenericThing$()))();
   let ChildThing = () => (ChildThing = dart.constFn(src__child_thing.ChildThing$()))();
   src__generic_thing.GenericThing$ = dart.generic(T => {
-    const super$foo = Symbol("super$foo");
     class GenericThing extends core.Object {
-      foo() {
-        return dart.async(function*() {
-        }, dart.dynamic);
-      }
+      foo() {}
     }
     dart.addTypeTests(GenericThing);
     dart.setSignature(GenericThing, {
@@ -27,12 +23,7 @@ define(['dart_sdk'], function(dart_sdk) {
   src__child_thing.ChildThing$ = dart.generic(T => {
     class ChildThing extends src__generic_thing.GenericThing$(T) {
       foo() {
-        return dart.async((function*() {
-          this[super$foo]();
-        }).bind(this), dart.dynamic);
-      }
-      [super$foo]() {
-        return super.foo();
+        super.foo();
       }
     }
     return ChildThing;
@@ -43,7 +34,7 @@ define(['dart_sdk'], function(dart_sdk) {
     "package:foo_app/src/child_thing.dart": src__child_thing,
     "package:foo_app/src/generic_thing.dart": src__generic_thing,
     "package:foo_app/src/app.dart": src__app
-  }, '{"version":3,"sourceRoot":"","sources":["src/generic_thing.dart","src/child_thing.dart","src/app.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;sCAKe;SACf;;;;;;;;;;;;;uCCCe;AACX,UAAA,iBAAW;AAAC,SAEhB;;;cAFI,MAAK;;;;;;ACJT;AAMA","file":"lib__shared_0.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["src/child_thing.dart","src/app.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;YAOc;AACV,QAAA,AAAA,KAAK,MAAM;AAAC,OAEhB;;;;;ACNA;AAMA","file":"lib__shared_0.js"}');
   // Exports:
   return {
     src__child_thing: src__child_thing,
